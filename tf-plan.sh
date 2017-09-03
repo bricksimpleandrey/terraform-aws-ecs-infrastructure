@@ -20,9 +20,11 @@ target_aws_region=$(sed -n 's/^region = "\(.*\)"$/\1/p' $variablesFile)
 
 terraform_remote_states_bucket=terraform-states-${target_aws_region}
 
-# Needed for Terraform AWS Provider {}
-export AWS_ACCESS_KEY_ID=$(aws configure get aws_access_key_id)
-export AWS_SECRET_ACCESS_KEY=$(aws configure get aws_secret_access_key)
+export AWS_DEFAULT_REGION=${target_aws_region}
+
+# Uncomment if working locally and not via Jenkins
+#export AWS_ACCESS_KEY_ID=$(aws configure get aws_access_key_id)
+#export AWS_SECRET_ACCESS_KEY=$(aws configure get aws_secret_access_key)
 
 # Uncomment for verbose terraform output
 #export TF_LOG=info
