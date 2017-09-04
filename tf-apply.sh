@@ -50,7 +50,5 @@ fi
 echo "# # # # # YOU DID IT! # # # # # #"
 echo "Yay! ECS & Bastion are now provisioned!"
 echo "To access your bastion instance, run \"ssh ec2-user@the.ip.in.output\""
-echo "Go ahead and ssh in and tail the provision script to watch everything get installed"
-echo "tail -f /var/log/user-data.log"
-echo "To access your jenkins UI, goto \"the.ip.in.output:8080\" in your web browser."
+
 echo "done";
