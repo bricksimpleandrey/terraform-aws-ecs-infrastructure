@@ -152,7 +152,7 @@ resource "aws_cloudwatch_metric_alarm" "ecs-alarm-down" {
 }
 
 resource "aws_autoscaling_group" "ecs-asg" {
-  vpc_zone_identifier = ["${module.vpc.public_subnets}"]
+  vpc_zone_identifier = ["${module.vpc.private_subnets}"]
   name = "${var.env_name}-ecs-asg"
   max_size = "${var.asg_max}"
   min_size = "${var.asg_min}"
