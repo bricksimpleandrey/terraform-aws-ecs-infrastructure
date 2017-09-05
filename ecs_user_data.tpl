@@ -19,7 +19,7 @@ echo ECS_AVAILABLE_LOGGING_DRIVERS=["json-file","awslogs"] >> /etc/ecs/ecs.confi
 echo ECS_LOGLEVEL=info >> /etc/ecs/ecs.config
 
 # Private docker repos
-#echo ECS_ENGINE_AUTH_TYPE=dockercfg >> /etc/ecs/ecs.config
-#echo ECS_ENGINE_AUTH_DATA={\"https://index.docker.io/v1/\": {\"auth\": \"${dockerhub_token}\", \"email\": \"${dockerhub_email}\"}} >> /etc/ecs/ecs.config
+echo ECS_ENGINE_AUTH_TYPE=dockercfg >> /etc/ecs/ecs.config
+echo ECS_ENGINE_AUTH_DATA={\"https://index.docker.io/v1/\": {\"auth\": \"${dockerhub_token}\", \"email\": \"${dockerhub_email}\"}} >> /etc/ecs/ecs.config
 
 yum install -y aws-cfn-bootstrap wget aws-cli jq git
