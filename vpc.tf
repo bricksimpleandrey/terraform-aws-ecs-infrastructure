@@ -8,6 +8,7 @@ module "vpc" {
   public_subnets  = ["${split(",",var.public_subnets)}"]
 
   enable_nat_gateway = "true"
+  enable_dns_support = "true"
 
   azs = ["${split(",",var.azs)}"]
 
