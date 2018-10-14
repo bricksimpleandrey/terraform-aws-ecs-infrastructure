@@ -20,11 +20,6 @@ if [ -z "${env_name}" ]; then
     echo "Please specify an env_name in manifest"
     exit
 fi
-app_name=$(sed -n 's/^app_name = "\(.*\)"$/\1/p' $variablesFile)
-if [ -z "${app_name}" ]; then
-    echo "Please specify an app_name in manifest"
-    exit
-fi
 target_aws_region=$(sed -n 's/^region = "\(.*\)"$/\1/p' $variablesFile)
 if [ -z "${target_aws_region}" ]; then
     echo "Please specify an target_aws_region in manifest"
