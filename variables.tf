@@ -2,6 +2,10 @@ variable "env_name" {
 	description = "The environment name"
 }
 
+variable "s3prefix" {
+	description = "The s3 prefix needed for storing remote tf state files"
+}
+
 variable "region" {
 	description = "The region for the aws VPC"
 }
