@@ -10,6 +10,7 @@ This should only really be called with Jenkins but you can call it locally by cr
 
 ```
 env_name = "dev"
+s3prefix = "optimus-prime-008"
 region = "us-west-2"
 "azs" = "us-west-2a,us-west-2b,us-west-2c"
 "ssh_key_name" = "root-ssh-key-us-west-2"
