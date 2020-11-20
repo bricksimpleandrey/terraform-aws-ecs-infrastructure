@@ -46,7 +46,7 @@ variable "amazon_amis" {
 	default = {
 		us-west-2 = "ami-5ec1673e"
 		us-east-2 = "ami-58277d3d"
-		us-east-1 = "ami-0ff8a91507f77f867"
+		us-east-1 = "ami-0080dc2d6cbfc4c39"
 	}
 }
 
@@ -57,7 +57,7 @@ variable "amazon_ecs_amis" {
 		"us-west-1" = "ami-4a2c192a"
 		"us-west-2" = "ami-1d668865"
 		"us-east-2" = "ami-43d0f626"
-		"us-east-1" = "ami-0130c3a072f3832ff"
+		"us-east-1" = "ami-09bee01cc997a78a6"
 	}
 }
 
