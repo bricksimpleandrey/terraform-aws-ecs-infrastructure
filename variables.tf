@@ -57,7 +57,7 @@ variable "amazon_ecs_amis" {
 		"us-west-1" = "ami-4a2c192a"
 		"us-west-2" = "ami-1d668865"
 		"us-east-2" = "ami-43d0f626"
-		"us-east-1" = "ami-09bee01cc997a78a6"
+		"us-east-1" = "ami-0130c3a072f3832ff"
 	}
 }
 
