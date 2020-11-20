@@ -46,6 +46,7 @@ variable "amazon_amis" {
 	default = {
 		us-west-2 = "ami-5ec1673e"
 		us-east-2 = "ami-58277d3d"
+		us-east-1 = "ami-0ff8a91507f77f867"
 	}
 }
 
@@ -56,12 +57,13 @@ variable "amazon_ecs_amis" {
 		"us-west-1" = "ami-4a2c192a"
 		"us-west-2" = "ami-1d668865"
 		"us-east-2" = "ami-43d0f626"
+		"us-east-1" = "ami-09bee01cc997a78a6"
 	}
 }
 
 variable "ecs_instance_type" {
 	description = "The AWS ECS instance type"
-	default = "t2.medium"
+	default = "t2.micro"
 }
 
 variable "asg_min" {
