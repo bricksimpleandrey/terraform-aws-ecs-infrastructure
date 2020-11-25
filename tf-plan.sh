@@ -17,18 +17,21 @@ fi
 # Set name of remote terraform states bucket
 env_name=$(sed -n 's/^env_name = "\(.*\)"$/\1/p' $variablesFile)
 if [ -z "${env_name}" ]; then
-    echo "Please specify an env_name in manifest"
-    exit
+    env_name="dev"
+#    echo "Please specify an env_name in manifest"
+#    exit
 fi
 target_aws_region=$(sed -n 's/^region = "\(.*\)"$/\1/p' $variablesFile)
 if [ -z "${target_aws_region}" ]; then
-    echo "Please specify an target_aws_region in manifest"
-    exit
+    target_aws_region="us-east-1"
+#    echo "Please specify an target_aws_region in manifest"
+#    exit
 fi
 s3_prefix=$(sed -n 's/^s3prefix = "\(.*\)"$/\1/p' $variablesFile)
 if [ -z "${s3_prefix}" ]; then
-    echo "Please specify an s3prefix in manifest"
-    exit
+    s3_prefix="brick-new"
+#    echo "Please specify an s3prefix in manifest"
+#    exit
 fi
 
 terraform_remote_states_bucket=${s3_prefix}-terraform-states-${target_aws_region}

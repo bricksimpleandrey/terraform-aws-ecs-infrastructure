@@ -1,21 +1,26 @@
 variable "env_name" {
+	default = "dev"
 	description = "The environment name"
 }
 
 variable "s3prefix" {
+	default = "brick-new"
 	description = "The s3 prefix needed for storing remote tf state files"
 }
 
 variable "region" {
+	default = "us-east-1"
 	description = "The region for the aws VPC"
 }
 
 variable "azs" {
+	default = "us-east-1a,us-east-1b,us-east-1c"
 	description = "List of availability zones"
 }
 
 # This is the root ssh key used for the ec2 instance
 variable "ssh_key_name" {
+	default = "root-ssh-key-us-east-1"
 	description = "The name of the preloaded root ssh key used to access AWS resources."
 }
 

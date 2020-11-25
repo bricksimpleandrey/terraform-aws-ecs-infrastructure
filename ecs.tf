@@ -81,7 +81,7 @@ resource "aws_security_group" "ecs" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-  tags {
+  tags = {
     Name = "${var.env_name}-ecs-sg"
     ManagedBy = "Terraform"
   }
@@ -113,7 +113,7 @@ resource "aws_cloudwatch_metric_alarm" "ecs-alarm-up" {
   alarm_description = "This metric monitors ECS RAM utilization"
   insufficient_data_actions = []
   alarm_actions = ["${aws_autoscaling_policy.ecs-scale-up.arn}"]
-  dimensions {
+  dimensions = {
     ClusterName = "${aws_ecs_cluster.ecs.name}"
   }
 
@@ -141,7 +141,7 @@ resource "aws_cloudwatch_metric_alarm" "ecs-alarm-down" {
   insufficient_data_actions = []
   alarm_actions = [
     "${aws_autoscaling_policy.ecs-scale-down.arn}"]
-  dimensions {
+  dimensions = {
     ClusterName = "${aws_ecs_cluster.ecs.name}"
   }
 
@@ -152,7 +152,7 @@ resource "aws_cloudwatch_metric_alarm" "ecs-alarm-down" {
 }
 
 resource "aws_autoscaling_group" "ecs-asg" {
-  vpc_zone_identifier = ["${module.vpc.private_subnets}"]
+  vpc_zone_identifier = "${module.vpc.private_subnets}"
   name = "${var.env_name}-ecs-asg"
   max_size = "${var.asg_max}"
   min_size = "${var.asg_min}"
