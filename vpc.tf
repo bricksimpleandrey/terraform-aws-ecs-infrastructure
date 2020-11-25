@@ -13,7 +13,7 @@ module "vpc" {
   azs = ["${split(",",var.azs)}"]
 
   tags {
-    "ManagedBy" = "Terraform"
-    "Name" = "${var.env_name}-${var.region}-vpc"
+    ManagedBy = "Terraform"
+    Name = "${var.env_name}-${var.region}-vpc"
   }
 }
